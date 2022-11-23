@@ -1,0 +1,131 @@
+:root {
+    --Red: hsl(0, 100%, 74%);
+    --Green: hsl(154, 59%, 51%);
+    /* ### Accent */
+    --Blue: hsl(248, 32%, 49%);
+    /* ### Neutral */
+    --DarkBlue: hsl(249, 10%, 26%);
+    --GrayishBlue: hsl(246, 25%, 77%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, 
+body {
+    background-image: url(/Signup/images/bg-intro-desktop.png);
+    background-color: var(--Red);
+    background-repeat:round;
+    background-size: contain;
+}
+
+p {
+    padding-top: 2em;
+}
+
+a {
+    color: var(--Red);
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+input {
+    border-radius: .5em;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--GrayishBlue);
+}
+
+input:active {
+    border: 2px solid var(--DarkBlue);
+}
+
+input[type=submit] {
+    width: 100%;
+    color: white;
+    background-color: var(--Green);
+    text-transform: uppercase;
+    border: 0;
+}
+
+input[type=submit]:hover {
+    background-color: hsl(154, 58%, 44%);
+}
+
+.background {
+    z-index: -1;
+
+    width: 100%;
+}
+.wrapper {
+    display: flex;
+    align-self: center;
+    max-width: 1200px;
+    padding: 1em;
+    margin: auto;
+    margin-top: 5em;
+    align-self: center;
+}
+
+.text {
+    align-self: center;
+    color: white;
+    padding: 3em;
+    flex-basis: 50%;
+}
+
+.form {
+    flex-basis: 50%;
+}
+
+.form-top {
+    text-align: center;
+    color: white;
+    padding: 1em;
+    background-color: var(--Blue);
+    border-radius: 1em;
+    box-shadow: 0px 10px 2px rgba(0,0,0,.2);
+}
+
+.form-main {
+    background-color: white;
+    border-radius: 1em;
+    padding: 2em;
+    margin-top: 2em;
+    box-shadow: 0px 10px 2px rgba(0,0,0,.2);
+}
+
+.tos {
+    text-align: center;
+    color: var(--GrayishBlue);
+    font-size: .75em;
+}
+
+@media only screen and (max-width: 800px ) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .text {
+        text-align: center;
+    }
+
+
+    
+}

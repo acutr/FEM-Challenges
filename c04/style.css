@@ -129,9 +129,6 @@ footer {
     .p-image-with-side-text {
         flex-direction: column;
     }
-    .image-1 img {
-    padding: 1em;
-    }
     .list-1 p,
     .list-1 h3 {
         text-align: center;

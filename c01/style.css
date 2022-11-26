@@ -43,7 +43,7 @@ p {
 }
 
 .image {
-    background-image: url(/QRCode/images/image-qr-code.png);
+    background-image: url(/c01/images/image-qr-code.png);
     background-repeat: no-repeat;
     background-size: contain;
     height: 20em;

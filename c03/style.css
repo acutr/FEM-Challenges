@@ -9,7 +9,7 @@
 
 html,
 body {
-    background-image: url(/c03-landing-page/images/bg-desktop.svg);
+    background-image: url(/c03/images/bg-desktop.svg);
     background-color: var(--Violet);
     background-repeat: no-repeat;
     background-size: cover;

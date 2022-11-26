@@ -1,0 +1,146 @@
+:root {
+    --StrongCyan: hsl(171, 66%, 44%);
+    --LightBlue: hsl(233, 100%, 69%);
+    --DarkGrayishBlue: hsl(210, 10%, 33%);
+    --GrayishBlue: hsl(201, 11%, 66%);
+}
+
+* {
+    margin: 0;
+    font-family: 'Bai Jamjuree', sans-serif;
+    text-align: center;
+}
+
+header {
+    background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1));
+    background-size: cover;
+    background-image: url(/c04/images/bg-header-desktop.png);
+    padding-top: 5em;
+}
+
+h1 {
+    margin: .5em;
+}
+
+h2 {
+    margin: .5em;
+}
+
+h3 {
+    margin: .5em;
+}
+
+p {
+    margin-bottom: 2em;
+    color: var(--GrayishBlue);
+}
+
+.logo {
+    padding: 2em;
+}
+
+.bigwrap {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.tightwrapper {
+    max-width: 35em;
+    margin: auto;
+}
+
+.p-1-text {
+    margin-top: 5em;
+}
+
+.dlbtns {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 2em;
+    
+}
+
+.dlbtn-1,
+.dlbtn-2 {
+    background-color: var(--StrongCyan);
+    padding: 1em;
+    border-radius: 2em;
+    margin: 1em .5em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.dlbtn-2 {
+    background-color: var(--LightBlue);
+}
+
+.p-image-with-side-text {
+    display: flex;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.image-1 img {
+    width: 100%;
+}
+
+.list-1 {
+    padding: 5em;
+    max-width: 22em;
+}
+
+.list-1 p,
+.list-1 h3 {
+    text-align: left;
+}
+
+.p-3-column {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column-in-3-col {
+    width: 22em;
+    margin-top: 5em;
+}
+
+.p-references {
+    margin-top: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-references img {
+    height: 100%;
+    padding: 1.5em;
+    /* width: 100%; */
+}
+
+footer {
+    background-color: var(--GrayishBlue);
+}
+
+@media only screen and (max-width:600px) {
+    
+    .dlbtns {
+        flex-direction: column;
+    }
+    .p-image-with-side-text {
+        flex-direction: column;
+    }
+    .list-1 p,
+    .list-1 h3 {
+        text-align: center;
+    }
+    .image-devices {
+        width: 100%;
+    }
+    .p-3-column {
+        flex-direction: column;
+        align-items: center;
+    }
+    .p-references {
+        flex-direction: column;
+    }
+}

@@ -116,7 +116,7 @@ p {
 .p-references img {
     height: 100%;
     padding: 1.5em;
-    /* width: 100%; */
+    width: 100%;
 }
 
 footer {
@@ -193,6 +193,10 @@ footer {
     }
     .p-references {
         flex-direction: column;
+    }
+    .p-references img {
+        margin: 2em;
+        max-width: 50%;
     }
     .ftrwrap {
         flex-direction: column;

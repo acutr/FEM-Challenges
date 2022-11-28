@@ -1,0 +1,82 @@
+:root {
+    --Pink: hsl(322, 100%, 66%);
+    --LightPink: hsl(321, 100%, 78%);
+    --LightRed: hsl(0, 100%, 63%);
+    --VeryDarkCyan: hsl(192, 100%, 9%);
+    --VeryPaleBlue: hsl(207, 100%, 98%);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1,
+h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    margin: 4em 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.trybtn {
+    margin-left: auto;
+    color: var(--LightPink);
+    padding: .5em 2em;
+    border: 2px solid var(--LightPink);
+    border-radius: 2em;
+}
+
+.trybtn:hover {
+    color:white;
+    background: var(--LightPink);
+}
+
+.button {
+    padding: 1em 4em;
+    border-radius: 2em;
+    background: var(--Pink);
+    color: white;
+    width: fit-content;
+    margin: auto;
+}
+
+.button:hover {
+    background: white;
+    color: var(--Pink);
+}
+
+
+.hero {
+    background: rgba(200, 100, 100, .5);
+    margin: 5em 5em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.minicont {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.twocol {
+    display: flex;
+    justify-content: space-around;    
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}

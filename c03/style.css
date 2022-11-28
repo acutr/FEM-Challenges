@@ -37,10 +37,13 @@ ion-icon {
     color: white;
     text-decoration: none;
     padding: .2em;
+    transition: scale .5s, padding 0.5s;
 }
 
 ion-icon:hover {
     color: var(--SoftMagenta);
+    scale: 1.5;
+    padding: 0.2em .5em;
 }
 
 a {
@@ -83,6 +86,8 @@ a {
     width: fit-content;
     margin: 1em 0;
     color: var(--Violet);
+    transition: color .5s, background-color .5s;
+    transition-timing-function: ease-in-out;
 }
 
 .register:hover {

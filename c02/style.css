@@ -18,8 +18,8 @@ html,
 body {
     background-image: url(../c02/images/bg-intro-desktop.png);
     background-color: var(--Red);
-    background-repeat:round;
-    background-size: contain;
+    background-repeat:no-repeat;
+    background-size: cover;
 }
 
 p {

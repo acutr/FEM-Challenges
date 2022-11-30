@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
 h1,
 h2 {
@@ -20,15 +21,19 @@ a {
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 4rem;
+    padding: 0 4rem;
 }
 
 header {
-    /* margin: 4em 0; */
     display: flex;
     align-items: flex-end;
+    padding-top: 5rem;
 }
 
+#bg {
+    width: 100%;
+    display: block;
+}
 
 .trybtn {
     margin-left: auto;
@@ -131,14 +136,15 @@ header {
 
 .feat {
     display: flex;
-    
+    background: var(--VeryPaleBlue);
     justify-content: space-between;
     align-items: center;
-    margin: 10rem 0;
+    margin: 0 0;
 }
 
-.feat:nth-of-type(2) {
+.feat:nth-of-type(odd) {
     flex-direction: row-reverse;
+    background: none;
 }
 
 .feat-item {
@@ -156,7 +162,57 @@ header {
     font-size: 2rem;
 }
 
+.footer-logo {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(186deg) brightness(102%) contrast(104%);
+}
 
+footer {
+    background: var(--VeryDarkCyan);
+    height: 100%;
+    overflow: hidden;
+    color: white;
+
+}
+
+footer .footer-col {
+    padding: 0 22rem 0 3rem;
+}
+
+footer .twocol p {
+    color: white;
+    font-size: .75rem;
+}
+
+footer .button { 
+    border-radius: .5rem;
+    position: relative;
+    bottom: 3rem;
+    left: 20rem;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+footer input {
+    width: 90%;
+    margin: 1rem 0;
+    padding: .75rem;
+    border-radius: .5rem;
+    border: none;
+}
+
+footer input:active {
+    border: none;
+}
+
+.phone {
+    margin: 1rem 0;
+}
+
+.phone::before {
+    content: url(./images/icon-phone.svg);
+    white-space: pre;
+}
 
 .attribution { 
     font-size: 11px; 

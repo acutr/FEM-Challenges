@@ -183,6 +183,24 @@ footer .twocol p {
     font-size: .75rem;
 }
 
+.footer-col p {
+    margin: 1rem 0;
+}
+
+.phone {
+    margin: 1rem 0;
+}
+
+.phone::before {
+    content: url(./images/icon-phone.svg);
+    margin-right: 1rem;
+}
+
+.email::before {
+    content: url(./images/icon-email.svg);
+    margin-right: 1rem;
+}
+
 footer .button { 
     border-radius: .5rem;
     position: relative;
@@ -203,15 +221,6 @@ footer input {
 
 footer input:active {
     border: none;
-}
-
-.phone {
-    margin: 1rem 0;
-}
-
-.phone::before {
-    content: url(./images/icon-phone.svg);
-    white-space: pre;
 }
 
 .attribution { 

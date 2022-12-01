@@ -90,7 +90,9 @@ header {
 
 .hero {
     /* background: rgba(200, 100, 100, .5); */
-    margin: 9rem 9rem;
+    margin: 9rem auto;
+    padding: 1rem;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -151,9 +153,8 @@ header {
 
 .feat-item {
     flex: 1 1 50%;
-    padding: 6rem;
+    padding: 5vw;
     text-align: left;
-
 }
 
 .feat-item img {
@@ -169,6 +170,8 @@ header {
 }
 
 footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background: var(--VeryDarkCyan);
     height: 100%;
     overflow: hidden;
@@ -177,16 +180,17 @@ footer {
 }
 
 footer .footer-col {
-    padding: 0 22rem 0 3rem;
+    padding: 0 3rem;
 }
 
-footer .twocol p {
+/* footer .twocol p {
     color: white;
     font-size: .75rem;
-}
+} */
 
 .footer-col p {
     margin: 1rem 0;
+    width: 23rem;
 }
 
 .phone {
@@ -205,18 +209,15 @@ footer .twocol p {
 
 footer .button { 
     border-radius: .5rem;
-    position: relative;
-    bottom: 3rem;
-    left: 20rem;
     padding: .5rem 2rem;
     font-size: 1rem;
     box-sizing: border-box;
 }
 
 footer input {
-    width: 90%;
-    margin: 1rem 0;
+    margin: 1rem 1rem 1rem 0;
     padding: .75rem;
+    width: auto;
     border-radius: .5rem;
     border: none;
 }
@@ -231,4 +232,24 @@ footer input:active {
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (max-width:700px) {
+    .feat,
+    .twocol {
+        flex-direction: column;
+    }
+    footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .minicont {
+
+    }
+    .container {
+        padding: 0;
+    }
+    header {
+        padding: 2rem;
+    }
 }

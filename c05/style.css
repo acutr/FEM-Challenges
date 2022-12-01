@@ -41,21 +41,22 @@ header {
     padding: .5em 2em;
     border: 2px solid var(--LightPink);
     border-radius: 2em;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
     transition: .2s ease-in-out;
 }
 
 .trybtn:hover {
     color:white;
     background: var(--LightPink);
+    translate: 0 -4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
 }
 
 .trybtn:active {
     color: var(--LightPink);
     background: white;
     border-color: var(--LightPink);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
-    translate: 0 4px;
+    translate: 0 0;
 }
 
 .button {
@@ -66,23 +67,24 @@ header {
     color: white;
     width: fit-content;
     margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
     transition: .1s ease-in-out;
     box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
 }
 
 .button:hover {
     background: white;
     color: var(--Pink);
     border: 2px solid var(--Pink);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
+    translate: 0 -4px;
 }
 
 .button:active {
     background: var(--Pink);
     color: white;
     border: 2px solid transparent;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 8px;
-    translate: 0 4px;
+    translate: 0 0;
 }
 
 

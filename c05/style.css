@@ -6,6 +6,10 @@
     --VeryPaleBlue: hsl(207, 100%, 98%);
 }
 
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;

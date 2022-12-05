@@ -238,6 +238,16 @@ footer input:invalid {
 
 }
 
+footer .footer-col .input-hint {
+    color: red;
+    display: none;
+    margin: 0;
+}
+
+footer input:invalid~.input-hint {
+    display: block;
+}
+
 footer input:focus {
     outline: 2px solid var(--LightPink);
 }

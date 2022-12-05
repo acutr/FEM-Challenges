@@ -150,15 +150,15 @@ header {
 
 .feat {
     display: flex;
-    background: var(--VeryPaleBlue);
+
     justify-content: space-between;
     align-items: center;
     margin: 0 0;
 }
 
-.feat:nth-of-type(odd) {
+.feat:nth-of-type(even) {
     flex-direction: row-reverse;
-    background: none;
+    background: var(--VeryPaleBlue);
 }
 
 .feat-item {
@@ -190,7 +190,7 @@ footer {
 }
 
 footer .footer-col {
-    padding: 3rem;
+    padding: 3rem 3rem 0 6rem;
     width: 100%;
 
 }
@@ -202,14 +202,17 @@ footer .footer-col {
 
 .footer-col p {
     margin: 1rem 0;
-    width: 23rem;
+    width: 19rem;
+    font-size: smaller;
 }
 
 .phone {
+    padding-top: 1rem;
     margin: 1rem 0;
 }
 
 .phone::before {
+
     content: url(./images/icon-phone.svg);
     margin-right: 1rem;
 }
@@ -222,7 +225,11 @@ footer .footer-col {
 footer .button {
     border-radius: .5rem;
     padding: .5rem 2rem;
-    font-size: 1rem;
+    font-size: smaller;
+}
+
+h3 {
+    font-size: larger;
 }
 
 footer input {
@@ -263,6 +270,7 @@ footer input:focus {
     padding: 1em 0;
     gap: .5em;
     font-size: 2rem;
+    margin-bottom: 3rem;
 }
 
 .social i:hover {

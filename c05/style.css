@@ -295,18 +295,18 @@ social a:visited {
 
     .feat,
     .twocol,
-    .feat:nth-of-type(odd),
-    footer {
+    .feat:nth-of-type(even) {
         flex-direction: column;
         margin: 0 auto;
     }
 
     footer {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        flex-direction: column-reverse;
     }
 
-    /* .minicont {} */
+    footer input {
+        width: calc(100% - 20rem);
+    }
 
     .container {
         padding: 0;

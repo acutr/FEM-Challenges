@@ -273,6 +273,7 @@ select {
     border-radius: 50%;
     aspect-ratio: 1;
     text-decoration: none;
+    margin: 5rem;
 }
 
 .large-button::after {
@@ -330,6 +331,36 @@ select {
 
 .tab-list {
     --gap: 2rem;
+}
+
+.dot-indicators>* {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: .5rem;
+    background-color: hsl(var(--clr-white) / .25);
+}
+
+.dot-indicators>*:hover,
+.dot-indicators>*:focus {
+    background-color: hsl(var(--clr-white) / .5);
+}
+
+.dot-indicators>[aria-selected="true"] {
+    background-color: hsl(var(--clr-white) / 1);
+}
+
+.numbered-list {
+    list-style: none;
+    flex-direction: column;
+}
+
+.numbered-list a {
+    text-decoration: none;
+    border-radius: 50%;
+    border: 2px solid hsl(var(--clr-white) / .5);
+    aspect-ratio: 1;
 }
 
 /* --------------------- */

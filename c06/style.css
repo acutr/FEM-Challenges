@@ -11,20 +11,42 @@
     --clr-light: 231 77% 90%;
     --clr-white: 0 0% 100%;
 
-    /* fonts */
-    --fs-900: 9.375rem;
-    --fs-800: 6.25rem;
-    --fs-700: 3.5rem;
-    --fs-600: 2rem;
+    /* font-sizes */
+    /* --fs-900: clamp(5rem, 11vw + 1rem, 9.375rem); */
+    --fs-900: 5rem;
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
     --fs-500: 1.75rem;
-    --fs-400: 1.125rem;
+    --fs-400: 0.9375rem;
     --fs-300: 1rem;
-    --fs-200: .875rem;
+    --fs-200: 0.875rem;
 
     /* font-families */
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-900: 9.375rem;
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-400: 1.125rem;
+
+    }
 }
 
 
@@ -77,6 +99,8 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
 /* Make images easy to work with */
@@ -122,6 +146,10 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.d-block {
+    display: block;
+}
+
 .flow>*+* {
     margin-top: var(--flow-space, 1rem);
     /* outline: 1px solid red; */
@@ -132,6 +160,28 @@ select {
     margin-inline: auto;
     max-width: 80rem;
 }
+
+.grid-container {
+    display: grid;
+}
+
+@media (min-width: 45em) {
+    .grid-container {
+        column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+        position: relative;
+    }
+
+    .grid-container>*:first-child {
+        grid-column: 2;
+    }
+
+    .grid-container>*:last-child {
+        grid-column: 3;
+    }
+}
+
+
 
 .sr-only {
     position: absolute;
@@ -266,14 +316,13 @@ select {
 
 .large-button {
     position: relative;
-    display: grid;
+    display: inline-grid;
     z-index: 1;
     place-items: center;
     padding: 0 2em;
     border-radius: 50%;
     aspect-ratio: 1;
     text-decoration: none;
-    margin: 5rem;
 }
 
 .large-button::after {
@@ -291,7 +340,7 @@ select {
 .large-button:hover::after {
 
     opacity: 1;
-    transform: scale(1.5);
+    transform: scale(1.75);
 }
 
 .primary-navigation {
@@ -358,9 +407,21 @@ select {
 
 .numbered-list a {
     text-decoration: none;
+    display: grid;
+    place-items: center;
     border-radius: 50%;
-    border: 2px solid hsl(var(--clr-white) / .5);
+    border: 1px solid hsl(var(--clr-white) / .25);
+    width: 2.5em;
     aspect-ratio: 1;
+}
+
+.numbered-list a:hover {
+    border-color: hsl(var(--clr-white));
+}
+
+.numbered-list>.active a {
+    background-color: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
 }
 
 /* --------------------- */

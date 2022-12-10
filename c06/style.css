@@ -424,16 +424,16 @@ select {
     .mobile-nav-toggle {
         z-index: 2000;
         display: block;
-        /* position: absolute; */
-        /* right: 1rem; */
-        /* top: 2rem; */
+        position: fixed;
+        right: 2rem;
+        top: 2rem;
         background: none;
         background-image: url(./starter-code/assets/shared/icon-hamburger.svg);
         background-repeat: no-repeat;
         width: 1.5rem;
         aspect-ratio: 1;
         border: none;
-        margin-left: auto;
+        /* margin-left: auto; */
         /* border: 1px solid red; */
     }
 
@@ -497,7 +497,7 @@ select {
 }
 
 .dot-indicators>*:hover,
-.dot-indicators>*:focus {
+.dot-indicators>*:focus-visible {
     background-color: hsl(var(--clr-white) / .5);
 }
 

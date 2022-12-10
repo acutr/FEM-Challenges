@@ -12,8 +12,8 @@
     --clr-white: 0 0% 100%;
 
     /* font-sizes */
-    /* --fs-900: clamp(5rem, 11vw + 1rem, 9.375rem); */
-    --fs-900: 5rem;
+    --fs-900: clamp(5rem, 11vw + 1rem, 9.375rem);
+    /* --fs-900: 5rem; */
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
@@ -30,7 +30,7 @@
 
 @media (min-width: 35em) {
     :root {
-        --fs-900: 9.375rem;
+        /* --fs-900: 9.375rem; */
         --fs-800: 5rem;
         --fs-700: 2.5rem;
         --fs-600: 1.5rem;
@@ -99,8 +99,11 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+
     display: grid;
     grid-template-rows: min-content 1fr;
+
+    overflow-x: hidden;
 }
 
 /* Make images easy to work with */
@@ -163,10 +166,23 @@ select {
 
 .grid-container {
     display: grid;
+    text-align: center;
+    place-items: center;
+    padding-inline: 1rem;
+}
+
+.grid-container * {
+    max-width: 50ch;
+}
+
+.home .grid-container {
+    padding-bottom: 5rem;
+    align-items: end;
 }
 
 @media (min-width: 45em) {
     .grid-container {
+        text-align: left;
         column-gap: var(--container-gap, 2rem);
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
         position: relative;
@@ -180,8 +196,6 @@ select {
         grid-column: 3;
     }
 }
-
-
 
 .sr-only {
     position: absolute;
@@ -315,6 +329,7 @@ select {
 /* --------------------- */
 
 .large-button {
+    font-size: 1.25rem;
     position: relative;
     display: inline-grid;
     z-index: 1;
@@ -323,6 +338,12 @@ select {
     border-radius: 50%;
     aspect-ratio: 1;
     text-decoration: none;
+}
+
+@media (min-width:35rem) {
+    .large-button {
+        font-size: 2rem;
+    }
 }
 
 .large-button::after {
@@ -340,15 +361,31 @@ select {
 .large-button:hover::after {
 
     opacity: 1;
-    transform: scale(1.75);
+    transform: scale(1.5);
+}
+
+.logo {
+    margin: 1.5rem clamp(1.5rem, 10vw, 3.5rem);
+}
+
+.primary-header {
+    justify-content: space-between;
+    align-items: center;
 }
 
 .primary-navigation {
-    --gap: 8rem;
     --underline-gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
+    background: hsl(var(--clr-dark) / 0.95);
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation {
+        background: hsl(var(--clr-white) / 0.05);
+        backdrop-filter: blur(1.5rem);
+    }
 }
 
 .primary-navigation a {
@@ -358,6 +395,74 @@ select {
 .primary-navigation a>span {
     font-weight: 700;
     margin-right: .5em;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+
+@media (max-width: 35rem) {
+    .primary-navigation {
+        z-index: 1000;
+        flex-direction: column;
+        --underline-gap: .5rem;
+        position: fixed;
+        inset: 0 0 0 30%;
+        backdrop-filter: blur(1.5rem);
+        padding: min(20rem, 15vh) 2rem;
+        transform: translateX(100%);
+        transition: transform 250ms ease-in-out;
+    }
+
+
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0);
+    }
+
+    .mobile-nav-toggle {
+        z-index: 2000;
+        display: block;
+        /* position: absolute; */
+        /* right: 1rem; */
+        /* top: 2rem; */
+        background: none;
+        background-image: url(./starter-code/assets/shared/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        border: none;
+        margin-left: auto;
+        /* border: 1px solid red; */
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(./starter-code/assets/shared/icon-close.svg);
+    }
+
+    .primary-navigation.underline-indicators>.active {
+        border: none;
+    }
+}
+
+@media (min-width: 35em) and (max-width: 45em) {
+    .primary-navigation {
+        --gap: calc(30vw - 9rem);
+        padding-inline: 3rem;
+    }
+
+    .primary-navigation a>span {
+        display: none;
+    }
+}
+
+@media (min-width: 45em) {
+    .primary-navigation {
+        margin-block: 2rem;
+        --gap: calc(12vw - 4rem);
+        padding-inline: 3rem;
+    }
 }
 
 .underline-indicators>* {
@@ -425,5 +530,30 @@ select {
 }
 
 /* --------------------- */
-/* Main stylesheet       */
+/* Page specific         */
 /* --------------------- */
+
+body {
+    background-size: cover;
+    background-position: bottom center;
+}
+
+
+/* home */
+
+.home {
+    background-image: url(./starter-code/assets/home/background-home-mobile.jpg);
+
+}
+
+@media (min-width: 35rem) {
+    .home {
+        background-image: url(./starter-code/assets/home/background-home-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .home {
+        background-image: url(./starter-code/assets/home/background-home-desktop.jpg);
+    }
+}

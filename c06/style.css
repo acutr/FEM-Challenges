@@ -17,9 +17,9 @@
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
-    --fs-500: 1.75rem;
+    --fs-500: 1rem;
     --fs-400: 0.9375rem;
-    --fs-300: 1rem;
+    --fs-300: 0.9375rem;
     --fs-200: 0.875rem;
 
     /* font-families */
@@ -34,6 +34,7 @@
         --fs-800: 5rem;
         --fs-700: 2.5rem;
         --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
         --fs-400: 1rem;
     }
 }
@@ -44,6 +45,7 @@
         --fs-800: 6.25rem;
         --fs-700: 3.5rem;
         --fs-600: 2rem;
+        --fs-500: 1.75rem;
         --fs-400: 1.125rem;
 
     }
@@ -164,38 +166,6 @@ select {
     max-width: 80rem;
 }
 
-.grid-container {
-    display: grid;
-    text-align: center;
-    place-items: center;
-    padding-inline: 1rem;
-}
-
-.grid-container * {
-    max-width: 50ch;
-}
-
-.home .grid-container {
-    padding-bottom: 5rem;
-    align-items: end;
-}
-
-@media (min-width: 45em) {
-    .grid-container {
-        text-align: left;
-        column-gap: var(--container-gap, 2rem);
-        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
-        position: relative;
-    }
-
-    .grid-container>*:first-child {
-        grid-column: 2;
-    }
-
-    .grid-container>*:last-child {
-        grid-column: 3;
-    }
-}
 
 .sr-only {
     position: absolute;
@@ -207,6 +177,21 @@ select {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+.skip-to-content {
+    position: absolute;
+    left: 50%;
+    background: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus-visible {
+    transform: translateY(0);
 }
 
 /* Colors */
@@ -358,8 +343,8 @@ select {
     transition: transform 500ms ease-in-out, opacity 500ms linear;
 }
 
-.large-button:hover::after {
-
+.large-button:hover::after,
+.large-button:focus::after {
     opacity: 1;
     transform: scale(1.5);
 }
@@ -460,8 +445,26 @@ select {
 @media (min-width: 45em) {
     .primary-navigation {
         margin-block: 2rem;
-        --gap: calc(12vw - 4rem);
-        padding-inline: 3rem;
+        --gap: calc(10vw - 4rem);
+        padding-inline: calc(3rem + 5vw);
+        padding-right: calc(40vw - 20rem)
+    }
+
+    /* decorative bar */
+    .primary-header::after {
+        content: '';
+        display: block;
+        position: relative;
+        height: 1px;
+        width: 100%;
+        margin-right: -3rem;
+        background: hsl(var(--clr-white) / .25);
+        order: 1;
+        z-index: 5;
+    }
+
+    nav {
+        order: 2;
     }
 }
 
@@ -555,5 +558,81 @@ body {
 @media (min-width: 45rem) {
     .home {
         background-image: url(./starter-code/assets/home/background-home-desktop.jpg);
+    }
+}
+
+
+/* --------------------- */
+/* Layouts               */
+/* --------------------- */
+
+.grid-container {
+    display: grid;
+    text-align: center;
+    place-items: center;
+    padding-inline: 1rem;
+}
+
+.grid-container * {
+    max-width: 50ch;
+}
+
+.grid-container--destination {
+    --flow-space: 2rem;
+    grid-template-areas:
+        'title'
+        'image'
+        'tabs'
+        'content';
+}
+
+.numbered-title {
+    grid-area: title;
+}
+
+.grid-container--destination>img {
+    grid-area: image;
+    max-width: 60%;
+}
+
+.grid-container--destination>.tab-list {
+    grid-area: tabs;
+}
+
+.grid-container--destination>.destination-info {
+    grid-area: content;
+}
+
+.destination-meta {
+    border-top: 1px solid hsl(var(--clr-white) / 0.15);
+    padding: 2rem;
+    flex-direction: column;
+    width: 100%;
+    /* padding-top: 2rem; */
+}
+
+.destination-meta>* {
+    margin-inline: auto;
+}
+
+.home .grid-container {
+    padding-bottom: 5rem;
+    align-items: end;
+}
+
+@media (min-width: 45em) {
+    .grid-container {
+        text-align: left;
+        column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+        position: relative;
+    }
+
+    .grid-container>*:first-child {
+        grid-column: 2;
+    }
+
+    .grid-container>*:last-child {
+        grid-column: 3;
     }
 }

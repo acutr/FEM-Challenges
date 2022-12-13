@@ -579,6 +579,17 @@ body {
     margin-inline: auto;
 }
 
+.numbered-title {
+    grid-area: title;
+}
+
+.home .grid-container {
+    padding-bottom: 5rem;
+    align-items: end;
+}
+
+/* destination */
+
 .grid-container--destination {
     --flow-space: 2rem;
     grid-template-areas:
@@ -586,10 +597,6 @@ body {
         'image'
         'tabs'
         'content';
-}
-
-.numbered-title {
-    grid-area: title;
 }
 
 .grid-container--destination>h1 {
@@ -621,10 +628,6 @@ body {
     margin-inline: auto;
 }
 
-.home .grid-container {
-    padding-bottom: 5rem;
-    align-items: end;
-}
 
 @media (min-width:35rem) {
     .destination-info>.flex {
@@ -669,10 +672,81 @@ body {
         max-width: 90%;
     }
 
-    .grid-container .flex {
+    .grid-container--destination .flex {
         flex-direction: row;
         justify-content: left;
         padding-inline: 0;
         --gap: 5rem;
+    }
+}
+
+/* crew */
+
+
+.grid-container--crew {
+    --flow-space: 2rem;
+    grid-template-areas:
+        'title'
+        'image'
+        'tabs'
+        'content';
+}
+
+.grid-container--crew>h1 {
+    margin-left: 0;
+}
+
+.grid-container--crew>img {
+    grid-area: image;
+    max-width: 60%;
+}
+
+.grid-container--crew>.dot-indicators {
+    grid-area: tabs;
+}
+
+.grid-container--crew>.crew-info {
+    grid-area: content;
+}
+
+@media (min-width:35rem) {
+    .grid-container--crew {
+        grid-template-areas:
+            'title'
+            'content'
+            'tabs'
+            'image';
+    }
+
+    .crew-info>.flex {
+        flex-direction: row;
+        justify-content: space-evenly;
+
+    }
+
+}
+
+@media (min-width: 45rem) {
+
+
+    .grid-container--crew {
+        /* --flow-space: 2rem; */
+        justify-items: start;
+        align-content: start;
+        grid-template-areas:
+            ' . title title . '
+            ' . content image . '
+            ' . tabs image . ';
+    }
+
+    .grid-container--destination>img {
+        grid-area: image;
+        max-width: 90%;
+    }
+
+    .grid-container--crew .flex {
+        flex-direction: row;
+        justify-content: left;
+        padding-inline: 0;
     }
 }

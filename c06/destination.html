@@ -36,26 +36,27 @@
   </header>
 
   <main id="main" class="grid-container grid-container--destination flow">
-    <!-- <div> -->
     <h1 class="numbered-title"><span aria-hidden="true">01</span>Pick your destination</h1>
 
-    <picture>
-      <!-- <source sourceset="./starter-code/assets/destination/image-moon.webp" type="image/webp"> -->
+    <picture class="moon-tab">
+      <source sourceset="./starter-code/assets/destination/image-moon.webp" type="image/webp">
       <img src="./starter-code/assets/destination/image-moon.png" alt="the Moon">
     </picture>
-    <picture hidden>
-      <!-- <source sourceset="./starter-code/assets/destination/image-mars.png" type="image/webp"> -->
+
+    <picture hidden class="mars-tab">
+      <source sourceset="./starter-code/assets/destination/image-mars.png" type="image/webp">
       <img src="./starter-code/assets/destination/image-mars.png" alt="Mars">
     </picture>
-    <picture hidden>
-      <!-- <source sourceset="./starter-code/assets/destination/image-europa.webp" type="image/webp"> -->
+
+    <picture hidden class="europa-tab">
+      <source sourceset="./starter-code/assets/destination/image-europa.webp" type="image/webp">
       <img src="./starter-code/assets/destination/image-europa.png" alt="Europa">
     </picture>
-    <picture hidden>
-      <!-- <source sourceset="./starter-code/assets/destination/image-titan.webp" type="image/webp"> -->
+
+    <picture hidden class="titan-tab">
+      <source sourceset="./starter-code/assets/destination/image-titan.webp" type="image/webp">
       <img src="./starter-code/assets/destination/image-titan.png" alt="Titan">
     </picture>
-    <!-- </div> -->
 
     <div role="tablist" class="tab-list underline-indicators flex">
       <button aria-selected="true" aria-controls="moon-tab" role="tab" tabindex="0" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>

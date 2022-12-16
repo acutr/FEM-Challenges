@@ -109,8 +109,7 @@ body {
 }
 
 /* Make images easy to work with */
-img,
-picture {
+img {
     max-width: 100%;
     display: block;
 }
@@ -641,6 +640,12 @@ body {
     max-width: 50ch;
     margin-inline: auto;
 }
+
+.grid-container img {
+    max-width: 100%;
+}
+
+
 
 .numbered-title {
     grid-area: title;

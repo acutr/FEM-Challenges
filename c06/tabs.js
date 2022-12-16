@@ -41,10 +41,18 @@ function changeTabPanel(e) {
     const tabContainer = targetTab.parentNode;
     const mainContainer = tabContainer.parentNode;
 
-    tabContainer.querySelectorAll('button').forEach((button) => button.setAttribute("aria-selected", "false"));
+    // change active underline
+    tabContainer.querySelectorAll('button').forEach((button) => button.setAttribute("aria-selected", 'false'));
     targetTab.setAttribute("aria-selected", "true")
-    mainContainer.querySelectorAll('article').forEach((article) => article.setAttribute('hidden', "true"));
+
+    // Change picture
+    mainContainer.querySelectorAll('picture').forEach((picture) => picture.setAttribute('hidden', 'true'));
+    mainContainer.querySelector([`.${targetPanel}`]).removeAttribute('hidden');
+
+    // change content
+    mainContainer.querySelectorAll('article').forEach((article) => article.setAttribute('hidden', 'true'));
     mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden');
 
-    console.log(tabContainer);
+
+    console.log(targetPanel);
 }

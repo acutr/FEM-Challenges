@@ -323,11 +323,13 @@ select {
     border-radius: 50%;
     aspect-ratio: 1;
     text-decoration: none;
+    margin-bottom: 5em;
 }
 
 @media (min-width:35rem) {
     .large-button {
         font-size: 2rem;
+        margin-bottom: 1em;
     }
 }
 

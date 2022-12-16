@@ -725,7 +725,7 @@ body {
             ' . image content . ';
     }
 
-    .grid-container--destination>img {
+    .grid-container--destination>picture {
         grid-area: image;
         max-width: 90%;
     }
@@ -830,3 +830,7 @@ body {
         padding-inline: 0;
     }
 }
+
+/* [role="tab"]:focus {
+    color: lime;
+} */

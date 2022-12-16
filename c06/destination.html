@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css">
 
   <script src="index.js" defer></script>
-  <script src="tabs.js"></script>
+  <script src="tabs.js" defer></script>
 </head>
 
 <body class="destination">
@@ -58,14 +58,14 @@
     <!-- </div> -->
 
     <div role="tablist" class="tab-list underline-indicators flex">
-      <button aria-selected="true" role="tab" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
-      <button aria-selected="false" role="tab" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
-      <button aria-selected="false" role="tab" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
-      <button aria-selected="false" role="tab" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Titan</button>
+      <button aria-selected="true" aria-controls="moon-tab" role="tab" tabindex="0" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
+      <button aria-selected="false" aria-controls="mars-tab" role="tab" tabindex="-1" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
+      <button aria-selected="false" aria-controls="europa-tab" role="tab" tabindex="-1" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+      <button aria-selected="false" aria-controls="titan-tab" role="tab" tabindex="-1" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Titan</button>
     </div>
 
     <!-- Moon -->
-    <article class="destination-info flow">
+    <article class="destination-info flow" id="moon-tab">
       <h2 class="fs-800 uppercase ff-serif">Moon</h2>
       <p class="text-accent">See our planet as you’ve never seen it before. A perfect relaxing trip away to help zregain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
 
@@ -82,7 +82,7 @@
     </article>
 
     <!-- Mars -->
-    <article class="destination-info flow" hidden>
+    <article class="destination-info flow" id="mars-tab" hidden>
       <h2 class="fs-800 uppercase ff-serif">Mars</h2>
       <p class="text-accent">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!</p>
 
@@ -99,7 +99,7 @@
     </article>
 
     <!-- Europa -->
-    <article class="destination-info flow" hidden>
+    <article class="destination-info flow" id="europa-tab" hidden>
       <h2 class="fs-800 uppercase ff-serif">Europa</h2>
       <p class="text-accent">The smallest of the four Galilean moons orbiting Jupiter, Europa is a
         winter lover’s dream. With an icy surface, it’s perfect for a bit of
@@ -119,11 +119,9 @@
     </article>
 
     <!-- Titan -->
-    <article class="destination-info flow" hidden>
-      <h2 class="fs-800 uppercase ff-serif">Moon</h2>
-      <p class="text-accent">The only moon known to have a dense atmosphere other than Earth, Titan
-        is a home away from home (just a few hundred degrees colder!). As a
-        bonus, you get striking views of the Rings of Saturn.</p>
+    <article class="destination-info flow" id="titan-tab" hidden>
+      <h2 class="fs-800 uppercase ff-serif">Titan</h2>
+      <p class="text-accent">The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.</p>
 
       <div class="flex">
         <div>

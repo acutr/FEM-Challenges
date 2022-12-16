@@ -548,7 +548,8 @@ body {
 
 .home {
     background-image: url(./starter-code/assets/home/background-home-mobile.jpg);
-
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @media (min-width: 35rem) {
@@ -567,7 +568,8 @@ body {
 
 .destination {
     background-image: url(./starter-code/assets/destination/background-destination-mobile.jpg);
-
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @media (min-width: 35rem) {
@@ -586,7 +588,8 @@ body {
 
 .crew {
     background-image: url(./starter-code/assets/crew/background-crew-mobile.jpg);
-
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @media (min-width: 35rem) {
@@ -605,7 +608,8 @@ body {
 
 .crew {
     background-image: url(./starter-code/assets/technology/background-technology-mobile.jpg);
-
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @media (min-width: 35rem) {

@@ -768,7 +768,7 @@ body {
     margin-left: 0;
 }
 
-.grid-container--crew>img {
+.grid-container--crew>picture {
     grid-area: image;
     max-width: 60%;
     border-bottom: 1px solid hsl(var(--clr-white) / .15);
@@ -831,7 +831,7 @@ body {
     }
 
 
-    .grid-container--crew>img {
+    .grid-container--crew>picture {
         max-width: 70%;
         align-self: end;
     }

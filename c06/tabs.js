@@ -9,22 +9,23 @@ tabs.forEach((tab) => {
 });
 
 let tabFocus = 0;
+
 function changeTabFocus(e) {
     const keydownLeft = 37;
     const keydownRight = 39;
 
-    if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
-        tabs[tabFocus].setAttribute("tabindex", -1);
-    }
+    // if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
+    //     tabs[tabFocus].setAttribute("tabindex", -1);
+    // }
 
     if (e.keyCode === keydownRight) {
+        tabs[tabFocus].setAttribute("tabindex", -1);
         tabFocus++;
         if (tabFocus >= tabs.length) {
             tabFocus = 0;
         }
-    }
-
-    if (e.keyCode === keydownLeft) {
+    } else if (e.keyCode === keydownLeft) {
+        tabs[tabFocus].setAttribute("tabindex", -1);
         tabFocus--;
         if (tabFocus < 0) {
             tabFocus = tabs.length - 1;
@@ -38,21 +39,35 @@ function changeTabFocus(e) {
 function changeTabPanel(e) {
     const targetTab = e.target;
     const targetPanel = targetTab.getAttribute("aria-controls");
+    const targetImage = targetTab.getAttribute("data-image");
+
+
     const tabContainer = targetTab.parentNode;
     const mainContainer = tabContainer.parentNode;
 
     // change active underline
-    tabContainer.querySelectorAll('button').forEach((button) => button.setAttribute("aria-selected", 'false'));
+    tabContainer
+        .querySelector('[aria-selected="true"]')
+        .setAttribute("aria-selected", false);
     targetTab.setAttribute("aria-selected", "true")
 
     // Change picture
-    mainContainer.querySelectorAll('picture').forEach((picture) => picture.setAttribute('hidden', 'true'));
-    mainContainer.querySelector([`.${targetPanel}`]).removeAttribute('hidden');
+    hideContent(mainContainer, 'picture');
+    showContent(mainContainer, targetImage);
 
-    // change content
-    mainContainer.querySelectorAll('article').forEach((article) => article.setAttribute('hidden', 'true'));
-    mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden');
+    // change article
+    hideContent(mainContainer, 'article');
+    showContent(mainContainer, targetPanel)
+}
 
+function hideContent(parent, content) {
+    parent
+        .querySelectorAll(content)
+        .forEach((item) => item.setAttribute('hidden', 'true'));
+}
 
-    console.log(targetPanel);
+function showContent(parent, targetId) {
+    parent
+        .querySelector([`#${targetId}`])
+        .removeAttribute('hidden');
 }

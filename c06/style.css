@@ -607,7 +607,7 @@ body {
 
 /* tech */
 
-.crew {
+.tech {
     background-image: url(./starter-code/assets/technology/background-technology-mobile.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -863,6 +863,114 @@ body {
     }
 }
 
-/* [role="tab"]:focus {
-    color: lime;
-} */
+/* tech */
+
+
+.grid-container--tech {
+    padding-bottom: 0;
+    /* justify-items: start;
+    align-content: start; */
+    --flow-space: 2rem;
+    grid-template-areas:
+        'title'
+        'image'
+        'tabs'
+        'content';
+}
+
+.grid-container--tech>h1 {
+    margin-left: 0;
+}
+
+.grid-container--tech>picture {
+    grid-area: image;
+    max-width: 60%;
+    align-self: end;
+    border-bottom: 1px solid hsl(var(--clr-white) / .15);
+}
+
+.grid-container--tech>.numbered-list {
+    grid-area: tabs;
+}
+
+.grid-container--tech>.tech-info {
+    grid-area: content;
+}
+
+.tech-info h2 {
+    opacity: .5;
+}
+
+@media (min-width:35rem) {
+    .grid-container--tech {
+        grid-template-areas:
+            'title'
+            'content'
+            'tabs'
+            'image';
+    }
+
+    .tech-info>.flex {
+        flex-direction: row;
+        justify-content: space-evenly;
+
+    }
+
+}
+
+@media (min-width: 55rem) {
+
+
+    .grid-container--tech {
+        /* --flow-space: 2rem; */
+        /* justify-items: start;
+        align-content: start; */
+        /* height: 83.5vh; */
+        grid-template-areas:
+            ' . title image . '
+            ' . content image . '
+            ' . tabs image . ';
+    }
+
+
+    .grid-container--tech>picture {
+        max-width: 100%;
+    }
+
+    .grid-container--tech>.numbered-title {
+        justify-self: start;
+        align-self: start;
+        margin-top: 2rem;
+    }
+
+    .grid-container--tech>.numbered-list {
+        justify-self: start;
+        align-self: start;
+        margin: 0;
+        padding-block: 2rem;
+    }
+
+    .grid-container--tech>article {
+        margin: 0;
+        padding: 0;
+        align-self: start;
+        justify-self: start;
+        min-height: 20rem;
+
+    }
+
+
+    .grid-container--tech>picture {
+        max-width: 50vh;
+        overflow: hidden;
+        /* height: 80%; */
+        align-self: end;
+        justify-self: center;
+    }
+
+    .grid-container--tech .flex {
+        flex-direction: row;
+        justify-content: left;
+        padding-inline: 0;
+    }
+}
